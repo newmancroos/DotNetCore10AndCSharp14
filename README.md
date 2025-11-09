@@ -13,3 +13,5 @@ So we can safely remove all previous version of .NET SDK
 
 **C# Compiler (Roslyn) ----> IL ------- CLR + JIT ---> CPU Instruction** 
 
+
+Each operating system has its own CLR that understands the IL code and compile it to that operating system understandable code.
