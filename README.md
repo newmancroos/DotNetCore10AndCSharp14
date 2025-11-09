@@ -10,3 +10,6 @@ All future versions of .NET 10 runtime are compatible with its major version. ex
 All future versions of the .NET SDK maintain the ability to build project that target previous versions of the runtime. For example, if a project targets net10.0 and you initially build it using .NET SDK 10.0.100 then you can upgrade the .NET SDK to future versions like 10.0.101 etc.
 
 So we can safely remove all previous version of .NET SDK
+
+**C# ----> IL ------- CLR + JIT ---> CPU Instruction** 
+
