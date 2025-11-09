@@ -11,5 +11,5 @@ All future versions of the .NET SDK maintain the ability to build project that t
 
 So we can safely remove all previous version of .NET SDK
 
-**C# ----> IL ------- CLR + JIT ---> CPU Instruction** 
+**C# Compiler (Roslyn) ----> IL ------- CLR + JIT ---> CPU Instruction** 
 
