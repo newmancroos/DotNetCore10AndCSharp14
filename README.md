@@ -15,3 +15,36 @@ So we can safely remove all previous version of .NET SDK
 
 
 Each operating system has its own CLR that understands the IL code and compile it to that operating system understandable code.
+
+
+**.NET 10 File based app** :
+We can create single file based c# code and execute in independantly as we do in Python
+
+<p>dotnot run hello.cs</p>
+
+For now we can have only one C# file in a file based app. Multiple file will be supported in .NET11.
+
+We can add Nuget Package / Project referance to the single file as below:
+
+<pre>
+#:package Humanizer@2.14.1
+#:project ../MyClassLib/MyClassLib.csproj
+  
+using Humanizer;
+  Console.WriteLine(TimeSpan.FromDays(1).Humanize());
+</pre>
+
+Later we can convert file-based app to a project-based app
+<pre>
+  dotnet project convert app.cs
+</pre>
+
+Publish file-based app
+<pre>
+  dotnet publish app.cs
+</pre>
+
+By default it is published as a native-compiled AOT app, we can doisable that by setting a propery at the top of the file
+<pre>
+  #:property PublishAot false
+</pre>
