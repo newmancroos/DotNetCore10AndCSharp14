@@ -50,8 +50,9 @@ By default it is published as a native-compiled AOT app, we can doisable that by
 </pre>
 
 
-
-**Using digit separator**
+<p>
+**Using digit separator:** <br/> 
 We can use underscore anywhere in the numbers to separate the numbers, Example:
 1_000_0000 or Indian format 10_00_000.
 Not only in whole number we can use it in decimal, hexadecimal or binary numbers.
+</p>
