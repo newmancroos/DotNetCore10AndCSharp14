@@ -109,3 +109,13 @@ foreach (Animal animal in animals)
 	}
 }
 </pre>
+
+In C#8 and later, we can Switch expression that further simplify the case statement.
+Ex.
+<pre>
+	message = animal switch
+	{
+		Cat fourlegs when fourlegs.Legs == 4 =>  $"The cat named {fourlegs.Name} has four legs";
+		Cat wildCat when wildCat.IsDomestic == false => "";
+	}
+</pre>
