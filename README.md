@@ -56,3 +56,56 @@ We can use underscore anywhere in the numbers to separate the numbers, Example:
 1_000_0000 or Indian format 10_00_000.
 Not only in whole number we can use it in decimal, hexadecimal or binary numbers.
 </p>
+
+
+## Pattern Matching
+
+After C# 7, We can use pattern matching in IF statement or Switch statement .
+
+Ex.
+<pre>
+	//If Sample
+	object 0="3";
+	int j = 4;
+if (o is int i)
+{
+	Console.WriteLine($"{i} X {j} = {i * j}");
+}
+else
+{
+	Console.WriteLine("o is not an int so it cannot multiply");
+}
+
+//Case sample
+class Animal;
+class Cat : Animal
+class Spider : Animal
+
+var animals = new Animal[]
+{
+	new Cat {};
+	new Cat {};
+	new Spider{}
+}
+
+foreach (Animal animal in animals)
+{
+	string message;
+	switch (animal)
+	{
+		case Cat fourlegs when fourleg.Legs ==4:
+			message = $"The cat named {fourlegs.Name} has four legs";
+			break;
+		case Cat wildcat when wildcat.Isdomestic == false;
+			message ="";
+			break;
+		case Spider spider when spider.IsVenomous==true
+			message="";
+			break;
+		case default:
+			break;
+		case null:
+			break
+	}
+}
+</pre>
