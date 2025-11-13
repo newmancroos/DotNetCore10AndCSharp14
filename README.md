@@ -119,3 +119,25 @@ Ex.
 		Cat wildCat when wildCat.IsDomestic == false => "";
 	}
 </pre>
+
+
+## Try .. Catch With filter
+After C#7 and later, we can use filters in catch blcok
+ex.
+<pre>
+	string amount = ReanLine()!;    // ! is null forgiving operator
+	if( string IsNullOrEmpty(amount)) return;
+try
+{
+	decimal amountValue = decimal.Parse(amount);
+	WriteLine($"Amount formatted as currency: {amountValue:C}");
+}
+catch (FormatException) when (amount.Contains('$'))
+{
+	WriteLine("Amount cannot use the dollar sign");
+}
+catch (FormatException)
+{
+	WriteLine("Amount must only contain digits");
+}
+</pre>
