@@ -177,108 +177,19 @@ In C#14 'field' keyword to access the compiler generated property directly withi
 
 ### Lazy Initialization
 If we have a property Relative in a class, If we call this property before assigning the value it will throw exception or default value. In C#14 we can use **null-coalescing** assignment.
-<pre>
-	public IReadOnlyList<Person> Relative => field ??=[]
-    public string Name
-    {
-		get => field ??= ComputeDefaultName();
-	}
-</pre>
+<img width="426" height="101" alt="image" src="https://github.com/user-attachments/assets/17412772-2377-4696-a4c1-dd3dbdd10c13" />
+
 
 Here, If the call to Relative before initiating the value, it will return empty array. In the second example, If we call Name before assign value it will call the **DefaultName** function.
 
 
 ## Extension Block
 
+<img width="1269" height="433" alt="image" src="https://github.com/user-attachments/assets/adc42863-014e-4380-a46b-bd0821ec5d55" />
+<img width="1249" height="828" alt="image" src="https://github.com/user-attachments/assets/bfa370e1-6dfb-44c6-8d22-b82caf3c9eaf" />
+<img width="1263" height="395" alt="image" src="https://github.com/user-attachments/assets/5b0bd9fc-204d-41d9-a4ac-2f29ff53b8fb" />
+
+
+
 Extension block has been introduced in C#14, here we can use **extension** as a wrapper, inside it we can have multiple extension methods, also we can create extension property.
 
-<pre>
-using System.Numerics;
-
-List<string> names = new() { "Alice", "Bob", "Charlie" };
-
-
-//string first = names.First<string>();
-string first = names.First();  // For Extension Method
-Console.WriteLine(first); // Output: Alice
-string firstGet = names.First;
-Console.WriteLine(firstGet); // Output: Alice
-
-//------------------------------------------------------------
-
-Func<string, string> Selector = (input) => $"Hello {input}";
-
-var output =  names.Select(Selector);
-Console.WriteLine(string.Join(",", output));
-//------------------------------------------------------------
-
-var r = IEnumerable<int>.Range(1, 10);
-
-Console.ReadKey();
-
-
-public static class MyEnumerable
-{
-    #region Prior to C#14
-    //public static TSource First<TSource>(this IEnumerable<TSource> source)
-    //{
-    //    foreach (TSource item in source) return item;
-    //    throw new InvalidOperationException("Sequence contains no elements");
-    //}
-
-    //public static IEnumerable<TResult> Select<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
-    //{
-    //    foreach (TSource item in source)
-    //    {
-    //        yield return selector(item);
-    //    }
-    //}
-    #endregion
-    #region C#14 - Extension Block
-    extension<TSource>(IEnumerable<TSource> source)
-    {
-        //public TSource First()
-        //{
-        //    foreach (TSource item in source) return item;
-        //    throw new InvalidOperationException("Sequence contains no elements");
-        //}
-
-        // We can simply change it to extension Property
-        public TSource First
-        {
-            get { 
-                foreach (TSource item in source) return item;
-                throw new InvalidOperationException("Sequence contains no elements");
-            }
-        }
-
-        public IEnumerable<TResult> Select<TResult>(Func<TSource, TResult> selector)
-        {
-            foreach (TSource item in source)
-            {
-                yield return selector(item);
-            }
-        }
-    }
-
-    
-    //extension(IEnumerable<int>)
-    //{
-    //    public static IEnumerable<int> Range(int start, int count)
-    //    {
-    //        for (int i = 0; i < count; i++) yield return start++;
-    //    }
-    //}
-
-    //If I want to dynamically specify the IEnumerable type
-    extension<T>(IEnumerable<T>) where T: INumber<T>
-    {
-        //Here we can use Int, long, float etc.
-        public static IEnumerable<T> Range(T start, int count)
-        {
-            for (int i = 0; i < count; i++) yield return start++;
-        }
-    }
-    #endregion
-}
-</pre>
