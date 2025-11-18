@@ -141,3 +141,48 @@ catch (FormatException)
 	WriteLine("Amount must only contain digits");
 }
 </pre>
+
+
+### field Keyword
+field in side auto property has been introduced in C#14.
+Ex.
+Previous Syntax:
+<pre>
+	private string name;
+	Public string Name
+	{
+		get {return name;}
+		set {name = value}
+	}
+</pre> 
+Now we can use field:
+<pre>
+	public string Name
+	{
+		get;
+		set {field = value;}
+	}
+</pre>
+If we have variable name field in our code to avoid keyword use error we can use this.field or @field
+<pre>
+	private string field;
+	public string Name
+	{
+		get;
+		set {@field = value;}  //This will use local variable
+	}
+</pre>
+
+In C#14 'field' keyword to access the compiler generated property directly within its accessor.
+
+### Lazy Initialization
+If we have a property Relative in a class, If we call this property before assigning the value it will throw exception or default value. In C#14 we can use **null-coalescing** assignment.
+<pre>
+	public IReadOnlyList<Person> Relative => field ??=[]
+    public string Name
+    {
+		get => field ??= ComputeDefaultName();
+	}
+</pre>
+
+Here, If the call to Relative before initiating the value, it will return empty array. In the second example, If we call Name before assign value it will call the **DefaultName** function.
