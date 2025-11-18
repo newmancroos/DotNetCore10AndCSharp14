@@ -178,7 +178,7 @@ In C#14 'field' keyword to access the compiler generated property directly withi
 ### Lazy Initialization
 If we have a property Relative in a class, If we call this property before assigning the value it will throw exception or default value. In C#14 we can use **null-coalescing** assignment.
 <pre>
-	public IReadOnlyList@lt;Person@lg; Relative =@lt; field ??=[]
+	public IReadOnlyList<Person> Relative => field ??=[]
     public string Name
     {
 		get => field ??= ComputeDefaultName();
