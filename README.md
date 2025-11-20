@@ -202,3 +202,13 @@ Extension block has been introduced in C#14, here we can use **extension** as a 
 * **Composition** - What an object made of. ex. A Car is composed of different parts such as Wheel, Seats ...
 * **Aggregation** - What can be combined with the object. ex. Person object not related to Car object but we can combine Person as a driver of a car object
   
+## Access Modifiers
+
+* **public:** Access is not restricted. Members declared as public can be accessed from any code, anywhere.
+* **private:** Access is limited to the containing type. Members declared as private can only be accessed from within the class or struct in which they are defined.
+* **protected:** Access is limited to the containing class or types derived from the containing class. This means protected members are accessible within the same class and in any class that inherits from it. 
+* **internal:** Access is limited to the current assembly. Members declared as internal can be accessed by any code within the same assembly (e.g., a single project or DLL), but not from outside that assembly.
+* **protected internal:** Access is limited to the current assembly OR types derived from the containing class (even if those derived types are in a different assembly). This combines the accessibility of protected and internal.
+* **private protected:** Access is limited to the containing class OR types derived from the containing class within the current assembly. This is a more restrictive combination than protected internal. 
+* **file:** This modifier is used for file-scoped types and is only available in C# 11 and later. It makes the declared type visible only within the current source file. File-scoped types are typically used for source generators.
+  
