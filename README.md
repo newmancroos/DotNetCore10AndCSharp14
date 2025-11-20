@@ -193,3 +193,12 @@ Here, If the call to Relative before initiating the value, it will return empty 
 
 Extension block has been introduced in C#14, here we can use **extension** as a wrapper, inside it we can have multiple extension methods, also we can create extension property.
 
+### Object Oriented Concepts
+
+* **Abstraction** - Hiding Complex implementation and showing the essential features
+* **Encapsulation**   - Bundling data(attributes) and methods that operate on that data into a single unit and controlling access to that data (Private, Public, protected, internal
+* **Inheritance**  - Using base class functionality inside child class
+* **Polymorphism** - Allow derived class to changing/modifying the implantation of a method of a class
+* **Composition** - What an object made of. ex. A Car is composed of different parts such as Wheel, Seats ...
+* **Aggregation** - What can be combined with the object. ex. Person object not related to Car object but we can combine Person as a driver of a car object
+  
