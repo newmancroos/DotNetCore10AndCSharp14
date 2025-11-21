@@ -212,3 +212,14 @@ Extension block has been introduced in C#14, here we can use **extension** as a 
 * **private protected:** Access is limited to the containing class OR types derived from the containing class within the current assembly. This is a more restrictive combination than protected internal. 
 * **file:** This modifier is used for file-scoped types and is only available in C# 11 and later. It makes the declared type visible only within the current source file. File-scoped types are typically used for source generators.
   
+### Passing  variable number of params to a function
+
+<pre>
+	public void ParamsParameters(string text, params nt[] numbers)
+	{
+		foreach(int a in numbers)
+		{
+			Console.WriteLine(a);
+		}
+	}
+</pre>
