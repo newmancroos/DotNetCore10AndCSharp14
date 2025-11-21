@@ -215,11 +215,13 @@ Extension block has been introduced in C#14, here we can use **extension** as a 
 ### Passing  variable number of params to a function
 
 <pre>
-	public void ParamsParameters(string text, params nt[] numbers)
+	public void ParamsParameters(string text, params int[] numbers)
 	{
 		foreach(int a in numbers)
 		{
 			Console.WriteLine(a);
 		}
 	}
+	
+	ParamsParameters("text", 1,2,3,4,5,6);
 </pre>
