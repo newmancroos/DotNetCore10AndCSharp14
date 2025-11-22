@@ -225,3 +225,25 @@ Extension block has been introduced in C#14, here we can use **extension** as a 
 	
 	ParamsParameters("text", 1,2,3,4,5,6);
 </pre>
+
+
+### Immutable property
+
+Immutable property just like read-only field that can me set during initialization. For immutable property we use **init**   keywork
+ex:
+<pre>
+public class ImmutablePerson
+{
+	public string? FirstName { get; init; }
+	public string? LastName { get; init; }
+}
+
+ImmutablePerson jeff = new()
+{
+	FirstName = "Jeff",
+	LastName = "Winger"
+};
+jeff.FirstName = "Updated"
+</pre>
+
+here, everything fine but the last line, we can't assign value to Immutable property except during initialization.
