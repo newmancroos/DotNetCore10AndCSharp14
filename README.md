@@ -247,3 +247,27 @@ jeff.FirstName = "Updated"
 </pre>
 
 here, everything fine but the last line, we can't assign value to Immutable property except during initialization.
+
+
+We can use it in **Record** too,
+
+ex:
+<pre>
+public record ImmutablePerson
+{
+	public string? FirstName { get; init; }
+	public string? LastName { get; init; }
+}
+
+ImmutablePerson jeff = new()
+{
+	FirstName = "Jeff",
+	LastName = "Winger"
+};
+</pre>
+Record type can be declare in one line like below
+<pre>
+	public  record RecordTypePerson(string? FirstName, string? LastName);
+	var person = new RecordTypePerson("Newman", "Croos");  
+	Console.WriteLine(person.FirstName);    
+</pre>
