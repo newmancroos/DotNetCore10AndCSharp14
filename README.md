@@ -271,3 +271,67 @@ Record type can be declare in one line like below
 	var person = new RecordTypePerson("Newman", "Croos");  
 	Console.WriteLine(person.FirstName);    
 </pre>
+
+
+### Delegate and Delegate Handler
+
+**Delegate :**   It is a function pointer, we can use it to point a method and use it as alias and call the function in the alias name
+
+**Delegate Handler:**  IS use to raise event 
+
+**Exmaple:**
+
+<pre>
+//Out side the class declaration
+//----------------------------------------------------------------------------------------
+//Delegate Declaration
+delegate int DelegateWithMatchingSignature(string s);
+//Declare EventHandler
+public delegate void EventHandler(object? sender, EventArgs e);
+//-----------------------------------------------------------------------------------------
+
+var person = new Person();
+//Delegate Mapping
+DelegateWithMatchingSignature methodCall = new(person.MethodIWantToCall);
+//Call method using Delegate
+Console.WriteLine(methodCall("Newman Croos"));
+
+person.Name = "Harry";  
+
+//Map EventHandler in Person Class
+person.Shout = Harry_Shout;
+person.Poke();
+person.Poke();
+person.Poke();
+static void Harry_Shout(object? sender, EventArgs e)
+{
+	    if (sender is null) return;
+	    if (sender is not Person p) return;
+	    Console.WriteLine($"{p.Name} is this angery : {p.AngerLevel}");
+}
+
+Console.ReadLine();
+
+public class Person
+{
+    public string Name { get; set; }
+    public EventHandler? Shout;
+
+    public int AngerLevel;
+    public int MethodIWantToCall(string input)
+    {
+        return input.Length;
+    }
+
+    public void Poke()
+    {
+        AngerLevel++;
+        if (AngerLevel < 3) return;
+
+        if (Shout is not null)
+        {
+            Shout(this, EventArgs.Empty);
+        }
+    }
+}
+</pre>
