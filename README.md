@@ -430,3 +430,46 @@ public class Person
     }
 }
 </pre>
+
+
+### IEnumerable Interface
+
+<pre>
+void Main()  
+{
+	//Country<State> country = new Country<State>();Country country = new Country();  
+	country[0]= new State{StateCode="1", StateName="Maryland"};  
+	country[1]= new State{StateCode="2", StateName="Virginia"};  
+  
+	//country[0].Dump();  
+  
+	foreach(State state in country)  
+	{  
+	Console.WriteLine(state.StateName);  
+	}  
+}
+
+class State  
+{
+	public  string StateCode{get;set;}  
+	public  string StateName{get;set;}  
+}  
+class Country:IEnumerable<State>  
+{  
+	List<State> stateList = new List<State>();
+	public State this[int index]  
+	{
+		get{return stateList[index];}set{stateList.Insert(index,value);}  
+	}    
+	IEnumerator IEnumerable.GetEnumerator()  
+	{  
+		return stateList.GetEnumerator();  
+	}
+	public IEnumerator<State> GetEnumerator()  
+	{
+		return stateList.GetEnumerator();  
+	}  
+}
+</pre>
+
+
