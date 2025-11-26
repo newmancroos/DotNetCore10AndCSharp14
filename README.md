@@ -433,43 +433,18 @@ public class Person
 
 
 ### IEnumerable Interface
+IEnumberable interface enables Enumerable natuer for the class member
+Example:
+<img width="684" height="832" alt="image" src="https://github.com/user-attachments/assets/9c6df8b5-ca14-480d-8486-214b64a8ac0d" />
 
-<pre>
-void Main()  
-{
-	//Country<State> country = new Country<State>();Country country = new Country();  
-	country[0]= new State{StateCode="1", StateName="Maryland"};  
-	country[1]= new State{StateCode="2", StateName="Virginia"};  
-  
-	//country[0].Dump();  
-  
-	foreach(State state in country)  
-	{  
-	Console.WriteLine(state.StateName);  
-	}  
-}
+### IComparable Interface
+Adds Sorting capability to a instances of the class
 
-class State  
-{
-	public  string StateCode{get;set;}  
-	public  string StateName{get;set;}  
-}  
-class Country:IEnumerable<State>  
-{  
-	List<State> stateList = new List<State>();
-	public State this[int index]  
-	{
-		get{return stateList[index];}set{stateList.Insert(index,value);}  
-	}    
-	IEnumerator IEnumerable.GetEnumerator()  
-	{  
-		return stateList.GetEnumerator();  
-	}
-	public IEnumerator<State> GetEnumerator()  
-	{
-		return stateList.GetEnumerator();  
-	}  
-}
-</pre>
+Example:
+<img width="997" height="468" alt="image" src="https://github.com/user-attachments/assets/30f49eb1-e229-4e26-b2d3-956051a15d18" />
+<img width="999" height="765" alt="image" src="https://github.com/user-attachments/assets/10ba0e33-e7f6-4e1b-8b6c-84a6efb3e312" />
+
+
+
 
 
