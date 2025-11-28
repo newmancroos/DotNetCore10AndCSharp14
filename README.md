@@ -446,5 +446,27 @@ Example:
 
 
 
+### Hiding a method from Base class
 
+If base class has a method but I want to hid it and force to use the same method name in the drived class, We should use **new** keyword.
+
+<pre>
+	public class Person
+	{
+		public string Name{get;set;}
+		public void WriteToConsole()
+		{
+			Console.WriteLine($"Person Name is {Name}");
+		}
+	}
+
+	public class Employee : Person
+	{
+			public string Department {get;set;}
+			public new void WriteToConsole()
+			{
+				console.WriteLine($"Person Name is {Name} and department is {Department}")
+			}
+	}
+</pre>
 
