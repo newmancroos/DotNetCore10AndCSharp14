@@ -470,3 +470,9 @@ If base class has a method but I want to hid it and force to use the same method
 	}
 </pre>
 
+### Note:
+
+**Now Interface has default implementation methods that can be override in the derived class, that means, We don't need abstract class in future?** No
+* All the methods of a Interface are public (or at least match the interface access level, which could be internal, If it should only be used in the class library that it's defined in).  BUT abstract class has more flexible in member access modifiers.
+* Serialization does not work on interfaces
+So we still need abstract class.
