@@ -508,3 +508,16 @@ Implicit casting, also known as upcasting, occurs when you assign an instance of
 	BaseClass baseObj = new DerivedClass(); // Or new BaseClass()
 	DerivedClass derived = (DerivedClass)baseObj; // Requires explicit cast
 </pre>
+
+
+Better we can check the object type before we casting it.
+
+ex:
+<pre>
+	if (aliceInPerson is BaseClass)
+	{
+	WriteLine($"{nameof(aliceInPerson)} is an Employee.");
+	DervivedClass explicitAlice = (DervivedClass)aliceInPerson;
+	// Safely do something with explicitAlice.
+	}
+</pre>
