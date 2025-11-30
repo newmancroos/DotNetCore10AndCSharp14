@@ -476,3 +476,35 @@ If base class has a method but I want to hid it and force to use the same method
 * All the methods of a Interface are public (or at least match the interface access level, which could be internal, If it should only be used in the class library that it's defined in).  BUT abstract class has more flexible in member access modifiers.
 * Serialization does not work on interfaces
 So we still need abstract class.
+
+
+
+
+
+## Casting Objects
+
+**Implicit Casting (Upcasting)**
+
+Implicit casting, also known as upcasting, occurs when you assign an instance of a derived class to a variable of its base class type. This conversion is automatic and safe because a derived class always contains all the members of its base class. No data loss is possible during upcasting.
+
+<pre>
+	class BaseClass { }
+	class DerivedClass : BaseClass { }
+
+	// Implicit casting: DerivedClass instance assigned to BaseClass variable
+	DerivedClass derived = new DerivedClass();
+	BaseClass baseObj = derived; 
+</pre>
+
+**Explicit Casting (Downcasting)**
+
+**Explicit casting, or down casting**, occurs when you attempt to assign an instance of a base class to a variable of its derived class type. This conversion is not automatic and requires a cast operator  `()`  because it's not guaranteed that the base class instance is actually an instance of the derived class. Down casting can lead to a runtime  `InvalidCastException`  if the object being cast is not truly an instance of the target derived type.
+
+<pre>
+	class BaseClass { }
+	class DerivedClass : BaseClass { }
+
+	// Explicit casting: BaseClass instance cast to DerivedClass
+	BaseClass baseObj = new DerivedClass(); // Or new BaseClass()
+	DerivedClass derived = (DerivedClass)baseObj; // Requires explicit cast
+</pre>
