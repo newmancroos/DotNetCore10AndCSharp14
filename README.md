@@ -521,3 +521,17 @@ ex:
 	// Safely do something with explicitAlice.
 	}
 </pre>
+
+
+## Custom Exception
+
+This could be the basic format for a custom exceptions
+<pre>
+	public class PersonException : Exception
+	{
+	public PersonException() : base() { }
+	public PersonException(string message) : base(message) { }
+	public PersonException(string message, Exception innerException)
+	: base(message, innerException) { }
+	}
+</pre>
