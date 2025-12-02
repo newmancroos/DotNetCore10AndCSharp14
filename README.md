@@ -537,3 +537,17 @@ This could be the basic format for a custom exceptions
 	: base(message, innerException) { }
 	}
 </pre>
+
+
+## Packaging a library as Nuget Package
+Before we packaging our library we need to configure our project file to accommodates package settings.
+
+- PackageId  - must be glabally unique so we need to use unique id or name
+- PackageLicenseExpression must be a valid from http://spdx.org/licenses/ or you could specify a custom license
+ 
+
+ <img width="433" height="467" alt="image" src="https://github.com/user-attachments/assets/c4236d79-86a6-46f4-8a6f-2c4cce881fbe" />
+
+ <img width="1196" height="377" alt="image" src="https://github.com/user-attachments/assets/beadb25f-fcd5-40b4-879f-f403d5d92b9b" />
+ 
+
