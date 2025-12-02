@@ -551,3 +551,25 @@ Before we packaging our library we need to configure our project file to accommo
  <img width="1196" height="377" alt="image" src="https://github.com/user-attachments/assets/beadb25f-fcd5-40b4-879f-f403d5d92b9b" />
  
 
+* Download required icons and readme.md to the project folder.
+* Build the project in Release mode
+	* In VS Code, in the terminal **dotnet build -c Release**
+* If you not set **GeneratePackageOnBuild** in the project file then 
+	* In Visual studio menu   **Build | Pack [Library Name]**
+	* In VS code terminal  **dotnet pack -c Release**
+
+## Publishing it to a public Nuget feed
+
+1. https://www.nuget.org/packages/manage/upload
+		* You will need to sign up for, and then sign in with Microsoft account
+2. Click Browse  button and select **.nupkg**  file we created
+3. After verify the cdproj file correctly filled, click submit
+
+**Note:**
+- Publishing to private Nuget Feed learn https://learn/microsoft.com/en-us/nuget/hosting-packages/overview
+- To view hosted nuget package we can use a tool called **Nuget Package Explorer** . navigate to https://nuget.info and search for your library  by name
+
+
+<img width="756" height="473" alt="image" src="https://github.com/user-attachments/assets/53b59c73-ec19-430d-86d2-38d50898f098" />
+
+
