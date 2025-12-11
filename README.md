@@ -570,6 +570,18 @@ Before we packaging our library we need to configure our project file to accommo
 - To view hosted nuget package we can use a tool called **Nuget Package Explorer** . navigate to https://nuget.info and search for your library  by name
 
 
+## Some importent concepts:
+
+- Process vs Thread
+	- Process is a instance of a program (workspace) with its own memory space and system resources
+	- Thread is a smallest unit of process, that shares memory and resources with other threads within the same process.
+- MultiThreading?
+	- Ability of executing multiple threads of code concurrently within a single process.
+
+
+  
+ - 
+
 <img width="756" height="473" alt="image" src="https://github.com/user-attachments/assets/53b59c73-ec19-430d-86d2-38d50898f098" />
 
 
