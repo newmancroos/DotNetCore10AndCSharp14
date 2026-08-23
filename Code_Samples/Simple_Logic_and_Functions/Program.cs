@@ -21,6 +21,9 @@ void AggregateFunctionSamples()
     string[] names = { "Nithin", "Nithia", "Newman" };
     var concatenatedNames = names.Aggregate((current,next) =>  current.ToString()  + next.ToString() );
     Console.WriteLine(concatenatedNames);
+
+
+
 }
 
 //2. Find First and Second Largest number in an array
